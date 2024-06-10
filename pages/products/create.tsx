@@ -2,6 +2,7 @@ import "../../app/globals.css";
 import React, { useState } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { createProducts } from "../../app/services/productsService";
+import Header from "../../app/components/Header"
 
 const CreateProduct: React.FC = () => {
   const queryClient = useQueryClient();
@@ -67,6 +68,8 @@ const CreateProduct: React.FC = () => {
   };
 
   return (
+  <div>
+    <Header/>
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Create Product</h1>
       <form onSubmit={handleSubmit}>
@@ -125,6 +128,7 @@ const CreateProduct: React.FC = () => {
       </form>
       {imageUrls && `Image url is ` + imageUrls}
     </div>
+  </div>
   );
 };
 
